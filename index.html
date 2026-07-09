@@ -268,7 +268,7 @@ Your business platform is now ready for the next development phase.
 <span>Add Product</span>
 </div>
 
-<div class="item">
+<div class="item" onclick="showProductList()">
 📋
 <span>Product List</span>
 </div>
@@ -284,6 +284,13 @@ Your business platform is now ready for the next development phase.
 <button class="btn" style="width:100%;">Save Product</button>
 
 </div>
+</div>
+<div class="card" id="productList" style="display:none;">
+
+<h2>Product List</h2>
+
+<p>No products loaded yet.</p>
+
 </div>
 </main>
 
@@ -301,6 +308,11 @@ if(name=="Products"){
 document.getElementById("productsSection").style.display="block";
 
 return;
+
+}
+function showProductList(){
+
+document.getElementById("productList").style.display="block";
 
 }
 
