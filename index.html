@@ -246,6 +246,17 @@ Your business platform is now ready for the next development phase.
 </div>
 
 </div>
+<div class="card">
+
+<h2>Quick Summary</h2>
+
+<p id="summaryProducts">Products : 0</p>
+
+<p id="summaryOrders">Orders : 0</p>
+
+<p id="summaryCustomers">Customers : 0</p>
+
+</div>
 </main>
 
 <footer>
@@ -260,6 +271,11 @@ function comingSoon(name){
 alert(name + " feature will be available soon.");
 
 }
+document.getElementById("summaryProducts").innerHTML = "Products : 0";
+
+document.getElementById("summaryOrders").innerHTML = "Orders : 0";
+
+document.getElementById("summaryCustomers").innerHTML = "Customers : 0";
 
 </script>
 </body>
