@@ -1,85 +1,186 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRAFTLINE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial,sans-serif;
-    }
+<title>CRAFTLINE</title>
 
-    body{
-      background:#f5f5f5;
-      color:#222;
-    }
+<style>
 
-    header{
-      background:#0f172a;
-      color:#fff;
-      padding:18px;
-      text-align:center;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    header h1{
-      font-size:26px;
-    }
+body{
+background:#f3f4f6;
+color:#222;
+}
 
-    header p{
-      margin-top:6px;
-      font-size:14px;
-      opacity:.8;
-    }
+header{
+background:#0F172A;
+color:#fff;
+padding:18px;
+text-align:center;
+}
 
-    main{
-      max-width:900px;
-      margin:auto;
-      padding:20px;
-    }
+header h1{
+font-size:28px;
+}
 
-    .card{
-      background:#fff;
-      border-radius:12px;
-      padding:20px;
-      margin-bottom:16px;
-      box-shadow:0 2px 8px rgba(0,0,0,.08);
-    }
+header p{
+margin-top:6px;
+font-size:14px;
+opacity:.85;
+}
 
-    .coming{
-      text-align:center;
-      padding:40px 20px;
-    }
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 16px;
+background:#ffffff;
+border-bottom:1px solid #ddd;
+}
 
-    .coming h2{
-      margin-bottom:10px;
-    }
+.lang button,
+.login button{
 
-    .btn{
-      background:#2563eb;
-      color:#fff;
-      border:none;
-      padding:12px 18px;
-      border-radius:8px;
-      cursor:pointer;
-    }
-  </style>
+padding:10px 16px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:14px;
+
+}
+
+.lang button{
+
+background:#e5e7eb;
+
+}
+
+.login button{
+
+background:#2563EB;
+color:white;
+
+}
+
+main{
+
+padding:20px;
+max-width:900px;
+margin:auto;
+
+}
+
+.card{
+
+background:white;
+border-radius:14px;
+padding:20px;
+margin-bottom:16px;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+line-height:1.6;
+
+}
+
+footer{
+
+margin-top:40px;
+padding:20px;
+text-align:center;
+font-size:13px;
+color:#666;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <h1>CRAFTLINE</h1>
-  <p>Digital Product Catalog</p>
+
+<h1>CRAFTLINE</h1>
+
+<p>Smart Business Platform</p>
+
 </header>
+
+<div class="topbar">
+
+<div class="lang">
+
+<button>বাংলা</button>
+
+</div>
+
+<div class="login">
+
+<button>Login</button>
+
+</div>
+
+</div>
 
 <main>
 
-  <div class="card coming">
-    <h2>Welcome</h2>
-    <p>CRAFTLINE website is under development.</p>
-    <br>
-    <button class="btn">Coming
+<div class="card">
+
+<h2>Welcome</h2>
+
+<p>
+
+Welcome to CRAFTLINE.
+
+Your business platform is now ready for the next development phase.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Status</h2>
+
+<p>
+
+✔ GitHub Connected<br>
+
+✔ Firebase Ready<br>
+
+✔ Firestore Ready<br>
+
+✔ Products Collection Ready
+
+</p>
+
+</div>
+
+</main>
+
+<footer>
+
+© 2026 CRAFTLINE
+
+</footer>
+
+</body>
+</html>
