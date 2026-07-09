@@ -333,5 +333,87 @@ document.getElementById("summaryOrders").innerHTML = "Orders : 0";
 document.getElementById("summaryCustomers").innerHTML = "Customers : 0";
 
 </script>
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import { 
+getFirestore,
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+// আপনার Firebase Config এখানে বসবে
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+
+// Firebase Start
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+
+async function loadProducts(){
+
+const productList = document.getElementById("productList");
+
+productList.innerHTML = "";
+
+
+const querySnapshot = await getDocs(collection(db,"products"));
+
+
+if(querySnapshot.empty){
+
+productList.innerHTML = "No products found";
+
+return;
+
+}
+
+
+querySnapshot.forEach((doc)=>{
+
+
+const product = doc.data();
+
+
+productList.innerHTML += `
+
+<div class="productCard">
+
+<h3>${product.name}</h3>
+
+<p>Category: ${product.category || ""}</p>
+
+<p>${product.subcategory || ""}</p>
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+loadProducts();
+
+
+</script>
 </body>
 </html>
