@@ -263,7 +263,7 @@ Your business platform is now ready for the next development phase.
 
 <div class="dashboard">
 
-<div class="item">
+<div class="item" onclick="document.getElementById('addProductForm').style.display='block'">
 ➕
 <span>Add Product</span>
 </div>
@@ -275,6 +275,15 @@ Your business platform is now ready for the next development phase.
 
 </div>
 
+<div id="addProductForm" style="display:none; margin-top:20px;">
+
+<input type="text" placeholder="Product Name" style="width:100%;padding:12px;margin-bottom:10px;">
+
+<input type="number" placeholder="Selling Price" style="width:100%;padding:12px;margin-bottom:10px;">
+
+<button class="btn" style="width:100%;">Save Product</button>
+
+</div>
 </div>
 </main>
 
