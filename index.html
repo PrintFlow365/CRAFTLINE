@@ -404,7 +404,10 @@ productList.innerHTML += `
 
 
 
-loadProducts();
+loadProducts().catch(error => {
+  alert(error.message);
+  console.error(error);
+});
 
 
 </script>
