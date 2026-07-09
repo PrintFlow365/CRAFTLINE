@@ -257,6 +257,13 @@ Your business platform is now ready for the next development phase.
 <p id="summaryCustomers">Customers : 0</p>
 
 </div>
+<div class="card" id="productsSection" style="display:none;">
+
+<h2>Products</h2>
+
+<p>Products page is under development.</p>
+
+</div>
 </main>
 
 <footer>
@@ -267,6 +274,14 @@ Your business platform is now ready for the next development phase.
 <script>
 
 function comingSoon(name){
+
+if(name=="Products"){
+
+document.getElementById("productsSection").style.display="block";
+
+return;
+
+}
 
 alert(name + " feature will be available soon.");
 
