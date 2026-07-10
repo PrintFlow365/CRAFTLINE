@@ -1,0 +1,59 @@
+[
+  {
+    "id": "P001",
+    "name_bn": "প্রাইস ট্যাগ",
+    "name_en": "Price Tag",
+    "category": "Printing & Packaging",
+    "subcategory": "Tags & Labels",
+    "image": "",
+    "description_bn": "ব্র্যান্ডের জন্য কাস্টম প্রাইস ট্যাগ প্রিন্টিং",
+    "description_en": "Custom printed price tags for brands"
+  },
+
+  {
+    "id": "P002",
+    "name_bn": "বিজনেস কার্ড",
+    "name_en": "Business Card",
+    "category": "Printing & Packaging",
+    "subcategory": "Business Materials",
+    "image": "",
+    "description_bn": "প্রফেশনাল বিজনেস কার্ড প্রিন্টিং",
+    "description_en": "Professional business card printing"
+  },
+
+  {
+    "id": "P003",
+    "name_bn": "প্যাকেজিং বক্স",
+    "name_en": "Packaging Box",
+    "category": "Printing & Packaging",
+    "subcategory": "Packaging",
+    "image": "",
+    "description_bn": "কাস্টম ব্র্যান্ডেড প্যাকেজিং বক্স",
+    "description_en": "Custom branded packaging boxes"
+  },
+
+
+  {
+    "id": "C001",
+    "name_bn": "কাস্টম ব্যাগ",
+    "name_en": "Custom Bag",
+    "category": "Custom Products",
+    "subcategory": "Bags",
+    "image": "",
+    "description_bn": "আপনার ডিজাইন অনুযায়ী তৈরি ব্যাগ",
+    "description_en": "Custom bags with your design"
+  },
+
+
+  {
+    "id": "R001",
+    "name_bn": "রেডি প্রোডাক্ট",
+    "name_en": "Ready Product",
+    "category": "Ready Products",
+    "subcategory": "General",
+    "image": "",
+    "description_bn": "প্রস্তুত পণ্য",
+    "description_en": "Ready products"
+  }
+
+]
