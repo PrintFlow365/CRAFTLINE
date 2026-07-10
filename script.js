@@ -44,9 +44,8 @@ ${product.category} - ${product.subcategory}
 </small>
 
 `;
-        </small>
 
-        `;
+container.appendChild(card);
 
 
         container.appendChild(card);
