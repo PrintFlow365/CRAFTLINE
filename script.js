@@ -31,14 +31,19 @@ fetch("products.json")
 
         card.innerHTML = `
 
-        <h3>${product.name_bn}</h3>
+<img src="images/${product.image}" alt="${product.name_en}" style="width:100%;max-height:200px;object-fit:contain;margin-bottom:10px;">
 
-        <p>${product.name_en}</p>
+<h3>${product.name_bn}</h3>
 
-        <p>${product.description_bn}</p>
+<p>${product.name_en}</p>
 
-        <small>
-        ${product.category} - ${product.subcategory}
+<p>${product.description_bn}</p>
+
+<small>
+${product.category} - ${product.subcategory}
+</small>
+
+`;
         </small>
 
         `;
