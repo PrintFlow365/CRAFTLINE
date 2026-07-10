@@ -6,154 +6,7 @@
 
 <title>CRAFTLINE</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:#f3f4f6;
-color:#222;
-}
-
-header{
-background:#0F172A;
-color:#fff;
-padding:18px;
-text-align:center;
-}
-
-header h1{
-font-size:28px;
-}
-
-header p{
-margin-top:6px;
-font-size:14px;
-opacity:.85;
-}
-
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:12px 16px;
-background:#ffffff;
-border-bottom:1px solid #ddd;
-}
-
-.lang button,
-.login button{
-
-padding:10px 16px;
-border:none;
-border-radius:8px;
-cursor:pointer;
-font-size:14px;
-
-}
-
-.lang button{
-
-background:#e5e7eb;
-
-}
-
-.login button{
-
-background:#2563EB;
-color:white;
-
-}
-
-main{
-
-padding:20px;
-max-width:900px;
-margin:auto;
-
-}
-
-.card{
-
-background:white;
-border-radius:14px;
-padding:20px;
-margin-bottom:16px;
-box-shadow:0 2px 8px rgba(0,0,0,.08);
-
-}
-
-.card h2{
-
-margin-bottom:10px;
-
-}
-
-.card p{
-
-line-height:1.6;
-
-}
-
-footer{
-
-margin-top:40px;
-padding:20px;
-text-align:center;
-font-size:13px;
-color:#666;
-
-}
-.section-title{
-font-size:22px;
-font-weight:bold;
-margin-bottom:15px;
-color:#0F172A;
-}
-.dashboard{
-
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-margin-top:15px;
-
-}
-
-.item{
-
-background:#2563EB;
-color:white;
-text-align:center;
-padding:25px 10px;
-border-radius:12px;
-font-size:18px;
-font-weight:bold;
-
-}
-.item{
-cursor:pointer;
-transition:.2s;
-}
-
-.item:hover{
-transform:scale(1.03);
-}
-
-.item:active{
-transform:scale(.97);
-}
-
-.item span{
-display:block;
-margin-top:8px;
-font-size:15px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -163,253 +16,151 @@ font-size:15px;
 
 <h1>CRAFTLINE</h1>
 
-<p>Smart Business Platform</p>
+<p>
+Printing • Packaging • Custom Products • Crafts
+</p>
+
+<button onclick="changeLanguage()">English</button>
 
 </header>
 
-<div class="topbar">
 
-<div class="lang">
+<nav>
 
-<button>বাংলা</button>
+<a href="#printing">Printing & Packaging</a>
 
-</div>
+<a href="#custom">Custom Products</a>
 
-<div class="login">
+<a href="#ready">Ready Products</a>
 
-<button>Login</button>
+<a href="#design">Design Services</a>
 
-</div>
+</nav>
 
-</div>
+
 
 <main>
 
-<h2 class="section-title">Home</h2>
 
-<div class="card">
+<section class="hero">
 
-<h2>Welcome</h2>
-
-<p>
-
-Welcome to CRAFTLINE.
-
-Your business platform is now ready for the next development phase.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>Status</h2>
+<h2>আপনার ব্যবসার জন্য প্রিন্টিং ও ক্রিয়েটিভ সলিউশন</h2>
 
 <p>
-
-✔ GitHub Connected<br>
-
-✔ Firebase Ready<br>
-
-✔ Firestore Ready<br>
-
-✔ Products Collection Ready
-
+প্রিন্টিং, প্যাকেজিং, কাস্টম প্রোডাক্ট এবং ক্রাফট আইটেম এক জায়গায়।
 </p>
 
-</div>
+</section>
+
+
+
+<section id="printing">
+
+<h2>Printing & Packaging</h2>
+
+<p>
+যেকোনো ধরনের প্রিন্টিং ও প্যাকেজিং সেবা।
+</p>
+
+<div class="card-container">
+
 <div class="card">
-
-<h2>Dashboard</h2>
-
-<div class="dashboard">
-
-<div class="item" onclick="comingSoon('Products')">
-📦
-<span>Products</span>
+<h3>Business Card</h3>
+<p>Professional visiting card printing</p>
 </div>
 
-<div class="item" onclick="comingSoon('Orders')">
-🛒
-<span>Orders</span>
-</div>
 
-<div class="item" onclick="comingSoon('Customers')">
-👥
-<span>Customers</span>
-</div>
-
-<div class="item" onclick="comingSoon('Reports')">
-📊
-<span>Reports</span>
-</div>
-</div>
-
-</div>
 <div class="card">
-
-<h2>Quick Summary</h2>
-
-<p id="summaryProducts">Products : 0</p>
-
-<p id="summaryOrders">Orders : 0</p>
-
-<p id="summaryCustomers">Customers : 0</p>
-
-</div>
-<div class="card" id="productsSection" style="display:none;">
-
-<h2>Products</h2>
-
-<div class="dashboard">
-
-<div class="item" onclick="document.getElementById('addProductForm').style.display='block'">
-➕
-<span>Add Product</span>
+<h3>Packaging Box</h3>
+<p>Custom printed boxes</p>
 </div>
 
-<div class="item" onclick="showProductList()">
-📋
-<span>Product List</span>
+
+<div class="card">
+<h3>Label & Tag</h3>
+<p>Brand labels and price tags</p>
 </div>
+
 
 </div>
 
-<div id="addProductForm" style="display:none; margin-top:20px;">
+</section>
 
-<input type="text" placeholder="Product Name" style="width:100%;padding:12px;margin-bottom:10px;">
 
-<input type="number" placeholder="Selling Price" style="width:100%;padding:12px;margin-bottom:10px;">
 
-<button class="btn" style="width:100%;">Save Product</button>
+
+<section id="custom">
+
+<h2>Custom Products</h2>
+
+<p>
+আপনার ডিজাইন অনুযায়ী তৈরি পণ্য।
+</p>
+
+
+<div class="card-container">
+
+<div class="card">
+<h3>Custom Bags</h3>
+</div>
+
+
+<div class="card">
+<h3>Leather Products</h3>
+</div>
+
+
+<div class="card">
+<h3>UV Printed Items</h3>
+</div>
+
 
 </div>
-</div>
-<div class="card" id="productList" style="display:none;">
 
-<h2>Product List</h2>
+</section>
 
-<p>No products loaded yet.</p>
 
-</div>
+
+
+<section id="ready">
+
+<h2>Ready Products</h2>
+
+<p>
+প্রস্তুত পণ্য সংগ্রহ করুন।
+</p>
+
+
+</section>
+
+
+
+
+<section id="design">
+
+<h2>Design Services</h2>
+
+<p>
+Logo, Packaging Design এবং Creative Design Service।
+</p>
+
+</section>
+
 
 </main>
 
+
+
 <footer>
 
-© 2026 CRAFTLINE
+<p>
+© 2026 CRAFTLINE. All Rights Reserved.
+</p>
 
 </footer>
-<script>
-
-function comingSoon(name){
-
-if(name=="Products"){
-
-document.getElementById("productsSection").style.display="block";
-
-return;
-
-}
-
-alert(name + " feature will be available soon.");
-
-}
-function showProductList(){
-
-document.getElementById("productList").style.display="block";
-
-}
-document.getElementById("summaryProducts").innerHTML = "Products : 0";
-
-document.getElementById("summaryOrders").innerHTML = "Orders : 0";
-
-document.getElementById("summaryCustomers").innerHTML = "Customers : 0";
-
-</script>
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import { 
-getFirestore,
-collection,
-getDocs
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 
-// আপনার Firebase Config এখানে বসবে
+<script src="script.js"></script>
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDISokO5QG6q6_m0mGJ3jQXheZX8rFJGfQ",
-  authDomain: "printflow365.firebaseapp.com",
-  projectId: "printflow365",
-  storageBucket: "printflow365.firebasestorage.app",
-  messagingSenderId: "752851933522",
-  appId: "1:752851933522:web:cb71d642a8b7ccf49ec28b"
-};
-
-// Firebase Start
-
-const app = initializeApp(firebaseConfig);
-
-const db = getFirestore(app);
-
-
-
-async function loadProducts(){
-
-const productList = document.getElementById("productList");
-
-productList.innerHTML = "";
-
-
-const querySnapshot = await getDocs(collection(db,"products"));
-
-
-if(querySnapshot.empty){
-
-productList.innerHTML = "No products found";
-
-return;
-
-}
-
-
-querySnapshot.forEach((doc)=>{
-
-
-const product = doc.data();
-
-
-productList.innerHTML += `
-
-<div class="productCard">
-
-<h3>${product.name}</h3>
-
-<p>Category: ${product.category || ""}</p>
-
-<p>${product.subcategory || ""}</p>
-
-</div>
-
-`;
-
-
-});
-
-
-}
-
-
-
-loadProducts().catch(error => {
-  alert(error.message);
-  console.error(error);
-});
-
-
-</script>
 </body>
 </html>
