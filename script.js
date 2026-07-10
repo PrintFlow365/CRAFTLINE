@@ -47,9 +47,6 @@ ${product.category} - ${product.subcategory}
 container.appendChild(card);
 
 
-        container.appendChild(card);
-
-
     });
 
 
