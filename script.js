@@ -4,7 +4,20 @@ function changeLanguage(){
 
 }
 
+function changeLanguage(){
 
+    alert("English version will be available soon.");
+
+}
+
+document.getElementById("orderNowBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    alert("Online Order System will be available in Version 3.");
+});
+
+// Load Products
+fetch("products.json")
+...
 
 // Load Products
 
