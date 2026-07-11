@@ -77,6 +77,7 @@ container.appendChild(card);
 
 });
 document.addEventListener("DOMContentLoaded", function(){
+console.log("Swiper starting");
 
 const swiper = new Swiper('.swiper', {
 
