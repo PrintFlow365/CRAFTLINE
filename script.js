@@ -10,11 +10,14 @@ function changeLanguage(){
 
 }
 
-document.getElementById("orderNowBtn").addEventListener("click", function(e) {
-    e.preventDefault();
-    alert("Online Order System will be available in Version 3.");
-});
+const orderBtn = document.getElementById("orderNowBtn");
 
+if(orderBtn){
+    orderBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        alert("Online Order System will be available in Version 3.");
+    });
+}
 // Load Products
 fetch("products.json")
 ...
