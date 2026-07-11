@@ -1,1 +1,129 @@
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    line-height:1.6;
+    color:#222;
+    background:#fff;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    background:#ffffff;
+    border-bottom:1px solid #ddd;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:15px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+}
+
+
+.hero{
+    padding:60px 20px;
+    text-align:center;
+    background:#f5f5f5;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    margin-bottom:25px;
+}
+
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:#222;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+
+.pillars{
+    padding:40px 20px;
+    text-align:center;
+}
+
+
+.pillars h2,
+.why h2{
+    margin-bottom:30px;
+}
+
+
+.card{
+    padding:25px;
+    margin:15px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+
+.why{
+    padding:40px 20px;
+    background:#f7f7f7;
+}
+
+
+.why li{
+    list-style:none;
+    margin:10px;
+}
+
+
+.quote{
+    padding:40px 20px;
+    text-align:center;
+}
+
+
+footer{
+    padding:20px;
+    text-align:center;
+    background:#222;
+    color:white;
+}
+
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:28px;
+}
+
+}
