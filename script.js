@@ -73,6 +73,8 @@ container.appendChild(card);
 
 
 });
+document.addEventListener("DOMContentLoaded", function(){
+
 const swiper = new Swiper('.swiper', {
 
     loop: true,
@@ -91,5 +93,7 @@ const swiper = new Swiper('.swiper', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+
+});
 
 });
