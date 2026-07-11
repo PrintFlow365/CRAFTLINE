@@ -76,28 +76,31 @@ container.appendChild(card);
 
 
 });
-document.addEventListener("DOMContentLoaded", function(){
-console.log("Swiper starting");
+document.addEventListener("DOMContentLoaded", function () {
 
-const swiper = new Swiper('.swiper', {
+    if (document.querySelector(".swiper")) {
 
-    loop: true,
+        new Swiper(".swiper", {
 
-    autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-    },
+            loop: true,
 
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
 
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
 
-});
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+        });
+
+    }
 
 });
