@@ -78,9 +78,11 @@ container.appendChild(card);
 });
 document.addEventListener("DOMContentLoaded", function () {
 
-    if (document.querySelector(".swiper")) {
+    const slider = document.querySelector(".swiper");
 
-        new Swiper(".swiper", {
+    if (slider) {
+
+        const swiper = new Swiper(".swiper", {
 
             loop: true,
 
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-            },
+            }
 
         });
 
