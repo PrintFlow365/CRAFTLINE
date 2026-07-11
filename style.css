@@ -157,3 +157,75 @@ nav{
 .dropdown:hover .dropdown-content{
     display:block;
 }
+.hero-slider{
+    width:100%;
+    height:85vh;
+}
+
+.swiper{
+    width:100%;
+    height:100%;
+}
+
+.swiper-slide{
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.hero-overlay{
+    position:absolute;
+    top:50%;
+    left:8%;
+    transform:translateY(-50%);
+    color:white;
+    max-width:600px;
+    z-index:2;
+}
+
+.hero-overlay h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero-overlay p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+
+.hero-overlay button{
+    margin-right:10px;
+    background:white;
+    color:#222;
+}
+
+
+.swiper-slide::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+}
+
+
+@media(max-width:768px){
+
+.hero-slider{
+    height:70vh;
+}
+
+.hero-overlay{
+    left:5%;
+    right:5%;
+}
+
+.hero-overlay h1{
+    font-size:30px;
+}
+
+.hero-overlay p{
+    font-size:16px;
+}
+
+}
