@@ -222,3 +222,12 @@ document.addEventListener("change", function(e){
     }
 
 });
+document.querySelectorAll('input[type="radio"]').forEach(function(item){
+
+    item.addEventListener("click", function(){
+
+        document.getElementById("selectedItemDisplay").innerHTML = this.value;
+
+    });
+
+});
