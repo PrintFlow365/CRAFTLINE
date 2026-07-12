@@ -4,12 +4,6 @@ function changeLanguage(){
 
 }
 
-function changeLanguage(){
-
-    alert("English version will be available soon.");
-
-}
-
 const orderBtn = document.getElementById("orderNowBtn");
 
 if(orderBtn){
