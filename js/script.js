@@ -190,14 +190,20 @@ if(selected){
     selectedItem = selected.value;
 }
 
-        alert(
-            "Order Received\n\n" +
-            "Name: " + name +
-            "\nCompany: " + company +
-            "\nWhatsApp: " + whatsapp +
-            "\nQuantity: " + quantity +
-            "\nSpecification: " + specification +
-            "\nRequirement: " + requirement
+        let orderSummary = 
+"CRAFTLINE Order Request\n\n" +
+"Item: " + selectedItem +
+"\n\nCustomer Details\n" +
+"Name: " + name +
+"\nCompany: " + company +
+"\nWhatsApp: " + whatsapp +
+"\n\nOrder Details\n" +
+"Quantity: " + quantity +
+"\nSpecification: " + specification +
+"\nRequirement: " + requirement;
+
+
+alert(orderSummary);
         );
 
     });
