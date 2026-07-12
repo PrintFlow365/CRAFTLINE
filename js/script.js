@@ -175,6 +175,3 @@ fetch("./header.html")
 .catch(error => {
     console.log(error);
 });
-console.log("SCRIPT LOADED");
-
-document.getElementById("header").innerHTML = "TEST HEADER";
