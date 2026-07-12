@@ -169,3 +169,30 @@ fetch("./header.html")
 .catch(error => {
     console.log(error);
 });
+const submitOrder = document.getElementById("submitOrder");
+
+if(submitOrder){
+
+    submitOrder.addEventListener("click", function(){
+
+        let name = document.querySelector('input[placeholder="Your Name"]').value;
+        let company = document.querySelector('input[placeholder="Company Name (Optional)"]').value;
+        let whatsapp = document.querySelector('input[placeholder="WhatsApp Number"]').value;
+        let quantity = document.querySelector('input[placeholder="Quantity"]').value;
+        let specification = document.querySelector('input[placeholder="Size / Specification"]').value;
+        let requirement = document.querySelector('textarea').value;
+
+
+        alert(
+            "Order Received\n\n" +
+            "Name: " + name +
+            "\nCompany: " + company +
+            "\nWhatsApp: " + whatsapp +
+            "\nQuantity: " + quantity +
+            "\nSpecification: " + specification +
+            "\nRequirement: " + requirement
+        );
+
+    });
+
+}
