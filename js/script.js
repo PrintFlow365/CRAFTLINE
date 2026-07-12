@@ -182,6 +182,13 @@ if(submitOrder){
         let specification = document.querySelector('input[placeholder="Size / Specification"]').value;
         let requirement = document.querySelector('textarea').value;
 
+let selectedItem = "";
+
+let selected = document.querySelector('input[type="radio"]:checked');
+
+if(selected){
+    selectedItem = selected.value;
+}
 
         alert(
             "Order Received\n\n" +
