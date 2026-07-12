@@ -162,8 +162,16 @@ if(prevBtn){
 
 setInterval(nextSlide, 5000);
 
-fetch("header.html")
-.then(response => response.text())
+fetch("./header.html")
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Header file not found");
+    }
+    return response.text();
+})
 .then(data => {
     document.getElementById("header").innerHTML = data;
+})
+.catch(error => {
+    console.log(error);
 });
