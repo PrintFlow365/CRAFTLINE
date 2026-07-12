@@ -231,3 +231,4 @@ document.querySelectorAll('input[type="radio"]').forEach(function(item){
     });
 
 });
+alert("SCRIPT WORKING");
