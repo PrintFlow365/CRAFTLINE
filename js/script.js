@@ -232,3 +232,18 @@ document.querySelectorAll('input[type="radio"]').forEach(function(item){
 
 });
 alert("SCRIPT WORKING");
+window.onload = function(){
+
+    const items = document.querySelectorAll('input[type="radio"]');
+
+    items.forEach(function(item){
+
+        item.onclick = function(){
+
+            document.getElementById("selectedItemDisplay").innerHTML = this.value;
+
+        };
+
+    });
+
+};
