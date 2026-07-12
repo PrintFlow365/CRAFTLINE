@@ -209,3 +209,13 @@ alert(orderSummary);
     });
 
 }
+document.querySelectorAll('input[type="radio"]').forEach(item => {
+
+    item.addEventListener("change", function(){
+
+        document.getElementById("selectedItemDisplay").innerText =
+        this.value;
+
+    });
+
+});
