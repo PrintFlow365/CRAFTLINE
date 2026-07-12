@@ -161,3 +161,9 @@ if(prevBtn){
 
 
 setInterval(nextSlide, 5000);
+
+fetch("header.html")
+.then(response => response.text())
+.then(data => {
+    document.getElementById("header").innerHTML = data;
+});
