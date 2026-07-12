@@ -13,12 +13,12 @@ if(orderBtn){
     });
 }
 // Load Products
-fetch("products.json")
+fetch("data/products.json")
 ...
 
 // Load Products
 
-fetch("products.json")
+fetch("data/products.json")
 
 .then(response => response.json())
 
