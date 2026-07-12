@@ -209,3 +209,16 @@ alert(orderSummary);
     });
 
 }
+document.addEventListener("change", function(e){
+
+    if(e.target.type === "radio"){
+
+        let display = document.getElementById("selectedItemDisplay");
+
+        if(display){
+            display.innerText = e.target.value;
+        }
+
+    }
+
+});
