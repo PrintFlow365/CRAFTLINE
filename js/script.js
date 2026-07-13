@@ -26,6 +26,60 @@ async function testFirebase(){
 
 
 testFirebase();
+async function loadFeaturedProducts(){
+
+    try{
+
+        const q = query(
+            collection(db, "products"),
+            where("featured", "==", true)
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        const container = document.getElementById("featuredProducts");
+
+        if(!container) return;
+
+        container.innerHTML = "";
+
+        querySnapshot.forEach((doc)=>{
+
+            const product = doc.data();
+
+            const card = document.createElement("div");
+
+            card.className = "product-card";
+
+            card.innerHTML = `
+
+<h3>${product.productName}</h3>
+
+<p>${product.category}</p>
+
+<p>${product.subcategory}</p>
+
+<p>Starting Price: ${product.basePrice}</p>
+
+<a href="#">View Details</a>
+
+`;
+
+            container.appendChild(card);
+
+        });
+
+
+    }catch(error){
+
+        console.log("Featured product error:", error);
+
+    }
+
+}
+
+
+loadFeaturedProducts();
 function changeLanguage(){
 
     alert("English version will be available soon.");
