@@ -1,4 +1,31 @@
 import { db } from "./firebase-config.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+async function testFirebase(){
+
+    try{
+
+        const querySnapshot = await getDocs(collection(db, "products"));
+
+        console.log("Firebase connected");
+
+        querySnapshot.forEach((doc)=>{
+
+            console.log(doc.id, doc.data());
+
+        });
+
+    }catch(error){
+
+        console.log("Firebase error:", error);
+
+    }
+
+}
+
+
+testFirebase();
 function changeLanguage(){
 
     alert("English version will be available soon.");
