@@ -1,3 +1,4 @@
+import { db } from "./firebase-config.js";
 function changeLanguage(){
 
     alert("English version will be available soon.");
