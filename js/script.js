@@ -216,7 +216,7 @@ document.querySelectorAll('input[type="radio"]').forEach(function(item){
     });
 
 });
-alert("SCRIPT WORKING");
+
 window.onload = function(){
 
     const items = document.querySelectorAll('input[type="radio"]');
