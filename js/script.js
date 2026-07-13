@@ -12,9 +12,7 @@ if(orderBtn){
         alert("Online Order System will be available in Version 3.");
     });
 }
-// Load Products
-fetch("data/products.json")
-...
+
 
 // Load Products
 
@@ -156,19 +154,7 @@ if(prevBtn){
 
 setInterval(nextSlide, 5000);
 
-fetch("./header.html")
-.then(response => {
-    if (!response.ok) {
-        throw new Error("Header file not found");
-    }
-    return response.text();
-})
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-})
-.catch(error => {
-    console.log(error);
-});
+
 const submitOrder = document.getElementById("submitOrder");
 
 if(submitOrder){
@@ -204,7 +190,6 @@ if(selected){
 
 
 alert(orderSummary);
-        );
 
     });
 
