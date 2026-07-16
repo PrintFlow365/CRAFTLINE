@@ -26,6 +26,39 @@ async function testFirebase(){
 
 
 testFirebase();
+async function loadProducts() {
+
+    try {
+
+        const q = query(
+            collection(db, "products"),
+            where("active", "==", true)
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        console.log("Products Loaded:");
+
+        querySnapshot.forEach((doc) => {
+
+            const product = doc.data();
+
+            console.log({
+                id: doc.id,
+                ...product
+            });
+
+        });
+
+    } catch (error) {
+
+        console.log("Product Load Error:", error);
+
+    }
+
+}
+
+loadProducts();
 async function loadFeaturedProducts(){
 
     try{
