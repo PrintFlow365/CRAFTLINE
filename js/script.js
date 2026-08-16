@@ -86,6 +86,12 @@ async function loadFeaturedProducts(){
 
             card.innerHTML = `
 
+<img 
+    src="images/${product.images[0]}" 
+    alt="${product.productName}"
+    class="product-image"
+>
+
 <h3>${product.productName}</h3>
 
 <p>${product.category}</p>
