@@ -429,3 +429,20 @@ nav{
     display: block;
     margin-bottom: 15px;
 }
+.product-card {
+    overflow: hidden;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+.product-card a {
+    display: inline-block;
+    margin-top: 10px;
+}
