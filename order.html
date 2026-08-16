@@ -1,347 +1,224 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Order / Request Quote | CRAFTLINE</title>
+    <title>Order - CRAFTLINE</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<header>
+    <main>
 
-<div class="logo">
-<a href="index.html">CRAFTLINE</a>
-</div>
+        <div id="orderDetails">
 
-<nav>
+            <p>Loading order...</p>
 
-<a href="index.html">Home</a>
+        </div>
 
-<a href="services.html">Printing & Packaging</a>
+    </main>
 
-<a href="Crafts-custom-products.html">Crafts & Custom Products</a>
 
-<a href="Curated-collections.html">Curated Collections</a>
+    <script type="module">
 
-<a href="design-content-creation.html">Design & Content Creation</a>
+        import { db } from "./js/firebase-config.js";
 
-<a href="portfolio.html">Portfolio</a>
+        import {
+            doc,
+            getDoc
+        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-<a href="about.html">About</a>
 
-<a href="contact.html">Contact</a>
+        async function loadOrderProduct(){
 
-</nav>
+            try{
 
-</header>
+                const params =
+                    new URLSearchParams(window.location.search);
 
+                const productId =
+                    params.get("product");
 
-<section class="page-header">
 
-<h1>Start Your Order / Request Quote</h1>
+                const container =
+                    document.getElementById("orderDetails");
 
-<p>
-Choose your requirement and get a custom solution from CRAFTLINE.
-</p>
 
-</section>
+                if(!productId){
 
+                    container.innerHTML =
+                        "<p>Product not found.</p>";
 
-<section class="order-pillars">
+                    return;
 
-<h2>Select Your Requirement</h2>
+                }
 
 
-<div class="order-grid">
+                const productRef =
+                    doc(db, "products", productId);
 
 
-<div class="order-card">
+                const productSnap =
+                    await getDoc(productRef);
 
-<h3>Printing & Packaging</h3>
 
-<p>
-Business cards, flyers, labels, tags, packaging and branding materials.
-</p>
+                if(!productSnap.exists()){
 
-<div class="focus-items">
+                    container.innerHTML =
+                        "<p>Product not found.</p>";
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Business Card">
-Business Card
-</label>
+                    return;
 
-<label>
-<input type="radio"
-name="printing-item"
- value="Letterhead">
-Letterhead
-</label>
+                }
 
-<label>
-<input type="radio"
-name="printing-item"
-value="Invoice Book">
-Invoice Book
-</label>
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Flyer">
-Flyer
-</label>
+                const product =
+                    productSnap.data();
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Catalogue">
-Catalogue
-</label>
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Hang Tag">
-Hang Tag
-</label>
+                let imageHTML = "";
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Label">
-Label
-</label>
 
-<label>
-<input type="radio"
-name="printing-item" 
-value="Packaging Box">
-Packaging Box
-</label>
+                if(
+                    product.images &&
+                    product.images.length > 0
+                ){
 
-</div>
+                    imageHTML = `
 
-</div>
+                        <img
+                            src="images/${product.images[0]}"
+                            alt="${product.productName || ""}"
+                            class="product-image"
+                        >
 
-<div class="order-card">
+                    `;
 
-<h3>Crafts & Custom Products</h3>
+                }
 
-<p>
-Customized products, handicrafts and personalized solutions.
-</p>
 
-<div class="focus-items">
+                container.innerHTML = `
 
-<label>
-<input type="checkbox" name="item" value="Custom Mug">
-Custom Mug
-</label>
+                    <div class="product-card">
 
-<label>
-<input type="checkbox" name="item" value="Custom Bag">
-Custom Bag
-</label>
+                        ${imageHTML}
 
-<label>
-<input type="checkbox" name="item" value="Leather Product">
-Leather Product
-</label>
+                        <h1>
+                            Order / Request Quote
+                        </h1>
 
-<label>
-<input type="checkbox" name="item" value="Handicraft Item">
-Handicraft Item
-</label>
 
-<label>
-<input type="checkbox" name="item" value="Custom Gift">
-Custom Gift
-</label>
+                        <h2>
+                            ${product.productName || ""}
+                        </h2>
 
-</div>
 
-</div>
+                        <p>
+                            Category:
+                            ${product.category || ""}
+                        </p>
 
-<div class="order-card">
 
-<h3>Curated Collections & Business Supply</h3>
+                        <p>
+                            Subcategory:
+                            ${product.subcategory || ""}
+                        </p>
 
-<p>
-Ready products and business supply solutions.
-</p>
 
-<div class="focus-items">
+                        <label>
+                            Quantity
+                        </label>
 
-<label>
-<input type="checkbox" name="item" value="Ready Products">
-Ready Products
-</label>
+                        <input
+                            type="number"
+                            id="quantity"
+                            min="1"
+                            value="1"
+                            style="width:100%; padding:12px; margin:8px 0 15px;"
+                        >
 
-<label>
-<input type="checkbox" name="item" value="Business Supplies">
-Business Supplies
-</label>
 
-<label>
-<input type="checkbox" name="item" value="Corporate Items">
-Corporate Items
-</label>
+                        <label>
+                            Additional Requirements
+                        </label>
 
-<label>
-<input type="checkbox" name="item" value="Retail Products">
-Retail Products
-</label>
+                        <textarea
+                            id="requirements"
+                            rows="5"
+                            placeholder="Write your requirements..."
+                            style="width:100%; padding:12px; margin:8px 0 15px;"
+                        ></textarea>
 
-</div>
 
-</div>
+                        <button
+                            id="submitOrderBtn"
+                            class="btn"
+                            style="width:100%;"
+                        >
+                            Submit Request
+                        </button>
 
-<div class="order-card">
 
-<h3>Design & Content Creation</h3>
+                        <a
+                            href="index.html"
+                            style="display:block; margin-top:15px;"
+                        >
+                            ← Back to Home
+                        </a>
 
-<p>
-Logo, branding, graphics and creative services.
-</p>
+                    </div>
 
-<div class="focus-items">
+                `;
 
-<label>
-<input type="checkbox" name="item" value="Logo Design">
-Logo Design
-</label>
 
-<label>
-<input type="checkbox" name="item" value="Brand Identity">
-Brand Identity
-</label>
+                document
+                    .getElementById("submitOrderBtn")
+                    .addEventListener("click", function(){
 
-<label>
-<input type="checkbox" name="item" value="Social Media Design">
-Social Media Design
-</label>
+                        const quantity =
+                            document.getElementById("quantity").value;
 
-<label>
-<input type="checkbox" name="item" value="Product Design">
-Product Design
-</label>
+                        const requirements =
+                            document.getElementById("requirements").value;
 
-<label>
-<input type="checkbox" name="item" value="Content Creation">
-Content Creation
-</label>
 
-</div>
+                        alert(
+                            "Order request received for " +
+                            product.productName +
+                            "\\nQuantity: " +
+                            quantity
+                        );
 
-</div>
+                    });
 
-</div>
 
-</section>
+            }catch(error){
 
+                console.log(
+                    "Order error:",
+                    error
+                );
 
-<section class="quote-form">
 
-<h2>Your Requirement</h2>
+                document.getElementById(
+                    "orderDetails"
+                ).innerHTML =
+                    "<p>Unable to load order page.</p>";
 
+            }
 
-<form>
+        }
 
-<label>
-Product / Service
-</label>
 
-<input type="text" placeholder="Example: Business Card">
+        loadOrderProduct();
 
-
-<label>
-Quantity
-</label>
-
-<input type="number" placeholder="Enter quantity">
-
-
-<label>
-Details
-</label>
-
-<textarea placeholder="Size, material, finishing, requirement"></textarea>
-
-
-<label>
-Upload File
-</label>
-
-<input type="file">
-
-
-<button type="submit">
-Submit Request
-</button>
-
-
-</form>
-<section class="order-form">
-
-<h2>Order Details</h2>
-
-<div class="selected-item-box">
-
-<h3>Selected Item</h3>
-
-<p id="selectedItemDisplay">
-No item selected
-</p>
-
-</div>
-<input type="text" placeholder="Your Name">
-
-<input type="text" placeholder="Company Name (Optional)">
-
-<input type="text" placeholder="WhatsApp Number">
-
-<input type="email" placeholder="Email (Optional)">
-
-
-<input type="number" placeholder="Quantity">
-
-
-<input type="text" placeholder="Size / Specification">
-
-
-<textarea placeholder="Additional Requirements"></textarea>
-
-
-<input type="file">
-
-
-<button type="button" id="submitOrder">
-Submit Order
-</button>
-
-</section>
-</section>
-
-
-<footer>
-
-<p>
-© 2026 CRAFTLINE. All Rights Reserved.
-</p>
-
-</footer>
-
-<script src="js/script.js"></script>
+    </script>
 
 </body>
 
