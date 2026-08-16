@@ -100,8 +100,7 @@ async function loadFeaturedProducts(){
 
 <p>Starting Price: ${product.basePrice}</p>
 
-<a href="#">View Details</a>
-
+<a href="product.html?id=${doc.id}">View Details</a>
 `;
 
             container.appendChild(card);
