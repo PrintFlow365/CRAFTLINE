@@ -1,21 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Product Details - CRAFTLINE</title>
 
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
     <main>
 
-        <div class="product-details" id="productDetails">
+        <div id="productDetails">
 
             <p>Loading product...</p>
 
@@ -38,14 +39,20 @@
 
             try{
 
-                const params = new URLSearchParams(window.location.search);
+                const params =
+                    new URLSearchParams(window.location.search);
 
-                const productId = params.get("id");
+                const productId =
+                    params.get("id");
+
+
+                const container =
+                    document.getElementById("productDetails");
 
 
                 if(!productId){
 
-                    document.getElementById("productDetails").innerHTML =
+                    container.innerHTML =
                         "<p>Product not found.</p>";
 
                     return;
@@ -53,14 +60,17 @@
                 }
 
 
-                const productRef = doc(db, "products", productId);
+                const productRef =
+                    doc(db, "products", productId);
 
-                const productSnap = await getDoc(productRef);
+
+                const productSnap =
+                    await getDoc(productRef);
 
 
                 if(!productSnap.exists()){
 
-                    document.getElementById("productDetails").innerHTML =
+                    container.innerHTML =
                         "<p>Product not found.</p>";
 
                     return;
@@ -68,58 +78,108 @@
                 }
 
 
-                const product = productSnap.data();
+                const product =
+                    productSnap.data();
 
 
-                const image =
-                    product.images && product.images.length > 0
-                    ? product.images[0]
-                    : "";
+                let imageHTML = "";
 
 
-                document.getElementById("productDetails").innerHTML = `
+                if(
+                    product.images &&
+                    product.images.length > 0
+                ){
 
-                    ${
-                        image
-                        ? `<img
-                            src="images/${image}"
-                            alt="${product.productName}"
+                    imageHTML = `
+
+                        <img
+                            src="images/${product.images[0]}"
+                            alt="${product.productName || ""}"
                             class="product-image"
-                        >`
-                        : ""
-                    }
+                        >
 
-                    <h1>${product.productName}</h1>
+                    `;
 
-                    <p><strong>Category:</strong> ${product.category || ""}</p>
+                }
 
-                    <p><strong>Subcategory:</strong> ${product.subcategory || ""}</p>
 
-                    <p><strong>Starting Price:</strong> ${product.basePrice || ""}</p>
+                container.innerHTML = `
 
-                    <p>
-                        ${
-                            product.description
-                            ? product.description
-                            : ""
-                        }
-                    </p>
+                    <div class="product-card">
 
-                    <button
-                        onclick="history.back()"
-                        class="btn"
-                    >
-                        Back
-                    </button>
+                        ${imageHTML}
+
+                        <h1>
+                            ${product.productName || ""}
+                        </h1>
+
+
+                        <p>
+                            <strong>Category:</strong>
+                            ${product.category || ""}
+                        </p>
+
+
+                        <p>
+                            <strong>Subcategory:</strong>
+                            ${product.subcategory || ""}
+                        </p>
+
+
+                        <p>
+                            <strong>Starting Price:</strong>
+                            ${product.basePrice || ""}
+                        </p>
+
+
+                        <p>
+                            <strong>Product Type:</strong>
+                            ${product.productType || ""}
+                        </p>
+
+
+                        <button
+                            id="orderProductBtn"
+                            class="btn"
+                            style="width:100%; margin-top:20px;"
+                        >
+                            Order / Request Quote
+                        </button>
+
+
+                        <a
+                            href="index.html"
+                            style="display:block; margin-top:15px;"
+                        >
+                            ← Back to Home
+                        </a>
+
+                    </div>
 
                 `;
 
 
+                document
+                    .getElementById("orderProductBtn")
+                    .addEventListener("click", function(){
+
+                        window.location.href =
+                            `order.html?product=${productId}`;
+
+                    });
+
+
             }catch(error){
 
-                console.log("Product details error:", error);
+                console.log(
+                    "Product details error:",
+                    error
+                );
 
-                document.getElementById("productDetails").innerHTML =
+
+                document.getElementById(
+                    "productDetails"
+                ).innerHTML =
                     "<p>Unable to load product.</p>";
 
             }
